@@ -1,0 +1,32 @@
+.labelClass {
+    color: rgb(3, 0, 0);
+    white-space: nowrap ;
+    font-size: 20px;
+    font-family: Arial, Helvetica, sans-serif;
+    padding-left:26px;
+    width:125px;
+    display:inline-block
+}
+
+.divClass{
+    display: block;
+    font-size: 30px;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+.inputClass{
+    font-size: 15px;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+.divpaddClass{
+    border-style: groove;
+    margin-top: 50px;
+    margin-bottom: 50px;
+    margin-right: 50px;
+    margin-left: 50px;
+}
+
+.divbuttonClass{
+    margin-right: 50px;
+}
