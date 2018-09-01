@@ -1,0 +1,120 @@
+
+<div class="row"> 
+  <div class="col-12 d-flex justify-content-between">
+      <div class="card-header divClass">
+        Retailer Details
+        &nbsp; &nbsp;<button type="button" class="btn btn-success" (click)="AddShop()" >Add New Shop</button>
+     </div>
+  </div>
+  <div class="col-12 ptablepad">
+    <p-table #teamTable  [styleClass]="'table'" [columns]="cols" [value]="teams" >
+      <ng-template class="header" pTemplate="header" let-columns>
+        <tr class="data">
+          <th *ngFor="let col of columns" [pSortableColumn]="col.field" [style.width]="col.width">
+            {{col.header}}
+            <p-sortIcon [field]="col.field"></p-sortIcon>
+          </th>
+          <th [style.width]="'25%'"></th>
+        </tr>   
+      </ng-template>
+      <ng-template  pTemplate="body" let-rowData let-columns="columns">
+        <tr class="data" [pSelectableRow]="rowData">
+          <td  *ngFor="let col of columns">
+            {{rowData[col.field]}}
+          </td>
+          <td>
+            <!-- <a href="/Coupon" class="btn btn-success" role="button">Edit</a> -->
+            <button type="button" class="btn btn-success" (click)="EditShop()" >Edit</button>
+            &nbsp; &nbsp;
+            <!-- <a href="#" class="btn btn-danger" role="button">Delete</a> -->
+            <button type="button" class="btn btn-danger" >Delete</button>
+            &nbsp; &nbsp;
+            <a href="/inner/retailer-view" class="btn btn-success" role="button">Coupon</a>
+          </td>
+        </tr>
+      </ng-template>
+    </p-table>
+
+   
+  </div>
+  <div *ngIf="display">
+      <form [formGroup]="RetailerForm" class="form-horizontal" #formDir="ngForm"  (ngSubmit)="onRetailerFormSubmit(formDir)">
+      <div class="card-header divClass">
+          Add New Shop
+       </div>
+  
+       <div class="row no-gutters p-2 divpaddClass">
+          <div class="col-md-4 col-lg-4 col-xl-3 col-sm-12 px-1">
+            <div class="form-group">
+              <label class="labelClass" for="firstName"> Shop Name</label>
+              <input type="text" class="form-control form-control-sm inputClass" formControlName="shopname"   placeholder=" Enter Shop Name" >
+            </div>
+          </div>
+            <div class="col-md-4 col-lg-4 col-xl-3 col-sm-12 px-1">
+              <div class="form-group">
+                <label class="labelClass" for="firstName"> Shop Address</label>
+                <input type="text" class="form-control form-control-sm inputClass" formControlName="shopaddress" placeholder=" Enter Shop Address" >
+              </div>
+            </div>
+              <div class="col-md-4 col-lg-4 col-xl-3 col-sm-12 px-1">
+                <div class="form-group">
+                  <label class="labelClass" for="firstName">Shop Location</label>
+                  <input type="text" class="form-control form-control-sm inputClass" formControlName="shoplocation" placeholder="Pick Location" >
+                </div>
+              </div>
+              <div class="col-md-4 col-lg-4 col-xl-3 col-sm-12 px-1">
+                  <div class="form-group">
+                    <label class="labelClass" for="firstName">Shop Description</label>
+                    <input type="text" class="form-control form-control-sm inputClass" formControlName="shopdescription" placeholder=" Enter Contact Number" >
+                  </div>
+                </div>
+                <div class="col-md-4 col-lg-4 col-xl-3 col-sm-12 px-1">
+                  <div class="form-group">
+                    <label class="labelClass" for="firstName">City</label>
+                    <input type="text" class="form-control form-control-sm inputClass" formControlName="city" placeholder=" Enter City" >
+                  </div>
+                </div>
+                  <div class="col-md-4 col-lg-4 col-xl-3 col-sm-12 px-1">
+                    <div class="form-group">
+                      <label class="labelClass" for="firstName">State</label>
+                      <input type="text" class="form-control form-control-sm inputClass" formControlName="state" placeholder=" Enter State" >
+                    </div>
+                  </div>
+                    <div class="col-md-4 col-lg-4 col-xl-3 col-sm-12 px-1">
+                      <div class="form-group">
+                        <label class="labelClass" for="firstName">Country</label>
+                        <input type="text" class="form-control form-control-sm inputClass" formControlName="country" placeholder=" Enter Country" >
+                      </div>
+                    </div>
+                      <div class="col-md-4 col-lg-4 col-xl-3 col-sm-12 px-1">
+                        <div class="form-group">
+                          <label class="labelClass" for="firstName">Pin Code</label>
+                          <input type="text" class="form-control form-control-sm inputClass" formControlName="pincode" placeholder=" Enter Pin Code" >
+                        </div>
+                      </div>
+                        <div class="col-md-4 col-lg-4 col-xl-3 col-sm-12 px-1">
+                          <div class="form-group">
+                            <label class="labelClass" for="firstName">Contact Number 1</label>
+                            <input type="text" class="form-control form-control-sm inputClass" formControlName="number1" placeholder=" Enter Contact Number" >
+                          </div>
+                        </div>
+                          <div class="col-md-4 col-lg-4 col-xl-3 col-sm-12 px-1">
+                            <div class="form-group">
+                              <label class="labelClass" for="firstName">Contact Number 2</label>
+                              <input type="text" class="form-control form-control-sm inputClass" formControlName="number2" placeholder=" Enter Contact Number" >
+                            </div>
+                          </div>
+         </div>
+       <div class="d-flex justify-content-end bottom-btns divbuttonClass">
+                <div class="mx-2">
+                  <button type="button" class="btn btn-secondary" (click)="HideAddShop()" >Cancel</button>
+                </div>
+                <div class="">
+                  <button type="submit" class="btn btn-success" (click)="HideAddShop()">Save</button>
+                </div>
+       </div>
+       </form>
+    </div>
+  </div>
+
+ 

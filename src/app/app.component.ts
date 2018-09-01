@@ -1,7 +1,7 @@
 import { Component } from '@angular/core';
 import { TeamData, List } from './constants/models';
 import { MenuItem } from 'primeng/components/common/menuitem';
-
+import { Router } from '@angular/router';
 
 
 @Component({
@@ -18,7 +18,7 @@ export class AppComponent {
     this.teams=List;
     
   }
-  items: MenuItem[];
+
 
   
 
@@ -30,12 +30,6 @@ export class AppComponent {
         { field: 'startdate', header: 'Start Date', width: '25%' },
         { field: 'enddate', header: 'End Date', width: '25%' }
     ];
-    this.items = [
-      {label: 'Stats', icon: 'fa fa-fw fa-bar-chart'},
-      {label: 'Calendar', icon: 'fa fa-fw fa-calendar'},
-      {label: 'Documentation', icon: 'fa fa-fw fa-book'},
-      {label: 'Support', icon: 'fa fa-fw fa-support'},
-      {label: 'Social', icon: 'fa fa-fw fa-twitter'}
-  ];
+   
 }
 }

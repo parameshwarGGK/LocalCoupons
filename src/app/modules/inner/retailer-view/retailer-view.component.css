@@ -1,0 +1,53 @@
+.ptablepad {
+    border-style:groove;
+    padding-top: 50px;
+    padding-bottom: 50px;
+    padding-right: 100px;
+    padding-left: 100px;
+} 
+
+.header {
+    font-size: 30px;
+    font-family: Arial, Helvetica, sans-serif;
+} 
+
+.data {
+    white-space: nowrap ;
+    font-size: 20px;
+    font-family: Arial, Helvetica, sans-serif;
+} 
+
+.divClass{
+    display: block;
+    font-size: 30px;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+.labelClass {
+    color: rgb(3, 0, 0);
+    white-space: nowrap ;
+    font-size: 20px;
+    font-family: Arial, Helvetica, sans-serif;
+    padding-left:26px;
+    width:125px;
+    display:inline-block
+}
+
+.inputClass{
+    font-size: 15px;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+
+.divpaddClass{
+    border-style: Solid;
+    margin-top: 50px;
+    margin-bottom: 50px;
+    margin-right: 50px;
+    margin-left: 50px;
+}
+
+.divbuttonClass{
+    margin-right: 50px;
+}
+

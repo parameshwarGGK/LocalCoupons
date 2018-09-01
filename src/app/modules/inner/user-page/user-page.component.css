@@ -1,0 +1,31 @@
+.orgChartNode 
+{     
+    width: 270px;     
+    float: left;         
+    margin-top: 20px;
+    margin-bottom: 20px;
+    margin-right: 20px;
+    margin-left: 20px;         
+    height: 130px;     
+    box-shadow: 1px 1px 0px #ddd;    
+    background-color: white;     
+    border: 1px solid #e7e7e7;     
+    font-family: sans-serif !important;     
+    font-weight: 600;     
+    border-radius: 3px;
+}
+
+.labelClass
+{
+    padding-left: 135px;
+}
+
+.buttonClass{
+    padding-left: 135px; 
+}
+
+.divClass{
+    display: block;
+    font-size: 30px;
+    font-family: Arial, Helvetica, sans-serif;
+}

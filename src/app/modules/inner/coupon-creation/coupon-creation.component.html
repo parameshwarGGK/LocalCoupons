@@ -1,0 +1,144 @@
+<form [formGroup]="CouponForm" class="form-horizontal" #formDir="ngForm"  (ngSubmit)="onCouponFormSubmit(formDir)">
+  <div class="card-header divClass">
+   Coupon Creation
+   &nbsp; &nbsp;<button type="button" class="btn btn-success" (click)="ViewCoupons()" >View Existing Coupons</button>
+   </div>
+   <div class="card-header SubdivpaddClass">
+         Product Details
+   </div>
+
+ <div class="row no-gutters p-2 divpaddClass">
+     
+   <div class="col-md-4 col-lg-4 col-xl-3 col-sm-12 px-1">
+     <div class="form-group">
+       <label class="labelClass" for="firstName"> Product Name</label>
+       <input type="text" class="form-control form-control-sm inputClass" formControlName="productname" placeholder=" Enter Product Name" >
+     </div>
+   </div>
+     <div class="col-md-4 col-lg-4 col-xl-3 col-sm-12 px-1">
+       <div class="form-group">
+         <label class="labelClass" for="firstName"> Product Discription</label>
+         <input type="text" class="form-control form-control-sm inputClass" formControlName="productdiscription" placeholder=" Enter Product Discription" >
+       </div>
+     </div>
+       <div class="col-md-4 col-lg-4 col-xl-3 col-sm-12 px-1">
+         <div class="form-group">
+           <label class="labelClass" for="firstName">Product Specification</label>
+           <input type="text" class="form-control form-control-sm inputClass" formControlName="productspecification" placeholder=" Enter Product Specification" >
+         </div>
+       </div>
+         <div class="col-md-4 col-lg-4 col-xl-3 col-sm-12 px-1">
+           <div class="form-group">
+             <label class="labelClass" for="firstName">Company</label>
+             <input type="text" class="form-control form-control-sm inputClass" formControlName="company" placeholder=" Enter Name of Company" >
+           </div>
+         </div>
+           <div class="col-md-4 col-lg-4 col-xl-3 col-sm-12 px-1">
+             <div class="form-group">
+               <label class="labelClass" for="firstName">Quantity</label>
+               <input type="text" class="form-control form-control-sm inputClass" formControlName="quality" placeholder=" Enter Quantity" >
+             </div>
+           </div>
+             <div class="col-md-4 col-lg-4 col-xl-3 col-sm-12 px-1">
+               <div class="form-group">
+                 <label class="labelClass" for="firstName">Sales Start Date</label>
+                 <input type="text" class="form-control form-control-sm inputClass" formControlName="startdate" placeholder=" Enter Sales Start Date" >
+               </div>
+             </div>
+               <div class="col-md-4 col-lg-4 col-xl-3 col-sm-12 px-1">
+                 <div class="form-group">
+                   <label class="labelClass" for="firstName">Sales End Date</label>
+                   <input type="text" class="form-control form-control-sm inputClass" formControlName="enddate" placeholder=" Enter Sales End Date" >
+                 </div>
+               </div>
+                 <div class="col-md-4 col-lg-4 col-xl-3 col-sm-12 px-1">
+                   <div class="form-group">
+                     <label class="labelClass" for="firstName">Price</label>
+                     <input type="text" class="form-control form-control-sm inputClass" formControlName="price" placeholder=" Enter Price" >
+                   </div>
+                 </div>
+                 <div class=" col-sm-12 " #gmap style="width:700px;height:400px" (dragEnd)="markerDragEnd($event)"></div>
+                 <div class="col-md-4 col-lg-4 col-xl-3 col-sm-12 px-1">
+                 <div class="form-group">
+                   <label class="labelClass" for="Lat" >Lat</label>
+                   <input type="text" class="form-control form-control-sm inputClass" formControlName="latitude"  placeholder=" latitude " [ngModel]="latitude" >
+
+                 </div>
+               </div>
+               <div class="col-md-4 col-lg-4 col-xl-3 col-sm-12 px-1">
+                 <div class="form-group">
+                   <label class="labelClass" for="firstName">Lang</label>
+                   <input type="text" class="form-control form-control-sm inputClass" formControlName="longitude"  placeholder=" longitude " [ngModel]="longitude" >
+                 </div>
+               </div>
+                  
+  </div>
+
+
+  <div class="card-header SubdivpaddClass">
+     Coupon Details
+     </div>
+<div class="row no-gutters p-2 divpaddClass">
+ 
+<div class="col-md-4 col-lg-4 col-xl-3 col-sm-12 px-1">
+ <div class="form-group">
+   <label class="labelClass" for="firstName"> Generated Coupon Code</label>
+   <input type="text" class="form-control form-control-sm inputClass" formControlName="couponcode" placeholder=" Enter Generated Coupon Code" >
+ </div>
+</div>
+ <div class="col-md-4 col-lg-4 col-xl-3 col-sm-12 px-1">
+   <div class="form-group">
+     <label class="labelClass" for="firstName"> Coupon Validation Start Date</label>
+     <input type="text" class="form-control form-control-sm inputClass" formControlName="validationstartdate" placeholder=" Pick Start Date" >
+   </div>
+ </div>
+   <div class="col-md-4 col-lg-4 col-xl-3 col-sm-12 px-1">
+     <div class="form-group">
+       <label class="labelClass" for="firstName">Coupon Validation End Date</label>
+       <input type="text" class="form-control form-control-sm inputClass" formControlName="validationenddate" placeholder=" Enter End Date" >
+     </div>
+   </div>
+</div>
+<div class="d-flex justify-content-end bottom-btns divbuttonClass">
+         <div class="mx-2">
+           <button type="button" class="btn btn-secondary" >Cancel</button>
+         </div>
+         <div class="">
+           <button type="submit" class="btn btn-success">Save</button>
+         </div>
+</div>
+</form>
+
+
+<div class="col-12 ptablepad" *ngIf="display">
+   <div class="card-header divClass">
+       Coupons List
+       &nbsp; &nbsp;<button type="button" class="btn btn-success" (click)="HideCoupons()" >Hide Coupons List</button>
+       </div>
+   <p-table #teamTable  [styleClass]="'table'" [columns]="cols" [value]="CouponList" >
+     <ng-template class="header" pTemplate="header" let-columns>
+       <tr class="data">
+         <th *ngFor="let col of columns" [pSortableColumn]="col.field" [style.width]="col.width">
+           {{col.header}}
+           <p-sortIcon [field]="col.field"></p-sortIcon>
+         </th>
+         <th [style.width]="'25%'"></th>
+       </tr>   
+     </ng-template>
+     <ng-template  pTemplate="body" let-rowData let-columns="columns">
+       <tr class="data" [pSelectableRow]="rowData">
+         <td  *ngFor="let col of columns">
+           {{rowData[col.field]}}
+         </td>
+         <td>
+           <!-- <a href="/Coupon" class="btn btn-success" role="button">Edit</a> -->
+           <button type="button" class="btn btn-success" (click)="HideCoupons()" >Edit</button>
+           &nbsp; &nbsp;
+           <!-- <a href="#" class="btn btn-danger" role="button">Delete</a> -->
+           <button type="button" class="btn btn-danger" >Delete</button>
+           
+         </td>
+       </tr>
+     </ng-template>
+   </p-table>   
+ </div>

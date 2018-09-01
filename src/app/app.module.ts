@@ -1,55 +1,24 @@
 import { BrowserModule } from '@angular/platform-browser';
-import { NgModule } from '@angular/core';
-
-import {MenuModule} from 'primeng/menu';
-
-import { HttpClientModule } from '@angular/common/http';
+import { NgModule, Component } from '@angular/core';
 import { AppComponent } from './app.component';
-import { TabMenuModule } from 'primeng/tabmenu';
-import { DropdownModule } from 'primeng/dropdown';
-import { CalendarModule } from 'primeng/calendar';
-import { InputTextModule } from 'primeng/inputtext';
-import { TableModule } from 'primeng/table';
-import { MultiSelectModule } from 'primeng/multiselect';
-import { InputSwitchModule } from 'primeng/inputswitch';
-import { InputMaskModule } from 'primeng/inputmask';
-import { AutoCompleteModule } from 'primeng/autocomplete';
-import { GrowlModule } from 'primeng/growl';
-import { TooltipModule } from 'primeng/tooltip';
-import { ReactiveFormsModule, FormsModule } from '@angular/forms';
-import { MapComponent } from './map/map.component';
-import { RouterModule, Routes } from '@angular/router';
+//import { RetailerPageComponent } from './retailer-page/retailer-page.component';
+import { AppRoutingModule } from './app.routing.module';
+import { InnerModule } from './modules/inner/inner.module';
+import { OuterModule } from './modules/outer/outer.module';
 
-const appRoutes: Routes = [
-  { path: '', component: AppComponent},
-  { path: 'maps', component: MapComponent }
-];
 
 @NgModule({
   declarations: [
     AppComponent,
-    MapComponent
+    
+    
   ],
   imports: [
-    RouterModule.forRoot(
-      appRoutes,
-      { enableTracing: false } // <-- debugging purposes only
-    ),
-    HttpClientModule,
-    TabMenuModule,
+    AppRoutingModule,
+    InnerModule,
     BrowserModule,
-    TableModule,
-    ReactiveFormsModule,
-    MultiSelectModule,
-    DropdownModule,
-    CalendarModule,
-    InputTextModule,
-    InputSwitchModule,
-    InputMaskModule,
-    AutoCompleteModule,
-    FormsModule,
-    GrowlModule,
-    TooltipModule
+    OuterModule
+    
   ],
   providers: [],
   bootstrap: [AppComponent]
