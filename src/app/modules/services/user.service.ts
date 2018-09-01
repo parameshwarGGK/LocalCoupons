@@ -36,13 +36,14 @@ export class UserService {
 
     SaveShopRegistration(shop:ShopRegistration)
     {
+      console.log('shop',shop);
       var headers = new HttpHeaders({
       "Content-Type": "application/json",
       "Accept": "application/json"
       });
 
       var body= JSON.stringify(shop);
-      return this._http.post("",body,{headers: headers});
+      return this._http.post(environment.EndPoint+"/api/register_shop",body,{headers: headers});
     }
 
     UpdateShopRegistration(shop:ShopRegistration)

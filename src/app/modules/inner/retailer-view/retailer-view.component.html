@@ -37,7 +37,7 @@
 
    
   </div>
-  <div *ngIf="display">
+  <div [ngClass]="addWrapperDisplay()">
       <form [formGroup]="RetailerForm" class="form-horizontal" #formDir="ngForm"  (ngSubmit)="onRetailerFormSubmit(formDir)">
       <div class="card-header divClass">
           Add New Shop
@@ -104,13 +104,27 @@
                               <input type="text" class="form-control form-control-sm inputClass" formControlName="number2" placeholder=" Enter Contact Number" >
                             </div>
                           </div>
+                          <div class=" col-sm-12 " id="map_id" #gmap style="width:700px;height:400px" (dragEnd)="markerDragEnd($event)"></div>
+                 <div class="col-md-4 col-lg-4 col-xl-3 col-sm-12 px-1">
+                 <div class="form-group">
+                   <label class="labelClass" for="Lat" >Latitude</label>
+                   <input type="text" class="form-control form-control-sm inputClass" formControlName="latitude"  placeholder=" latitude " [ngModel]="latitude" >
+
+                 </div>
+               </div>
+               <div class="col-md-4 col-lg-4 col-xl-3 col-sm-12 px-1">
+                 <div class="form-group">
+                   <label class="labelClass" for="firstName">Longitude</label>
+                   <input type="text" class="form-control form-control-sm inputClass" formControlName="longitude"  placeholder=" longitude " [ngModel]="longitude" >
+                 </div>
+               </div>
          </div>
        <div class="d-flex justify-content-end bottom-btns divbuttonClass">
                 <div class="mx-2">
                   <button type="button" class="btn btn-secondary" (click)="HideAddShop()" >Cancel</button>
                 </div>
                 <div class="">
-                  <button type="submit" class="btn btn-success" (click)="HideAddShop()">Save</button>
+                  <button type="submit" class="btn btn-success">Save</button>
                 </div>
        </div>
        </form>

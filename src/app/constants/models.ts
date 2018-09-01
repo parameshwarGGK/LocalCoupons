@@ -47,6 +47,8 @@ export const GetList = [
         Pincode:string;
         ContactNo1:string;
         ContactNo2:string;
+        latitude: string;
+        longitude: string;
     }
 
 
